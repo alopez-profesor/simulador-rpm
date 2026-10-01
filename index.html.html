@@ -1,0 +1,390 @@
+html_content_u3_w8 = """<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U3-S8: Pruebas de Caja Negra - Técnicas de Desarrollo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        pre, code { font-family: 'Fira Code', monospace; }
+        .slide-container { aspect-ratio: 16 / 9; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col overflow-x-hidden">
+
+    <header class="bg-slate-950 border-b border-slate-800 px-6 py-4 flex justify-between items-center shrink-0">
+        <div class="flex items-center gap-3">
+            <span class="material-icons text-emerald-400"> biotech </span>
+            <div>
+                <h1 class="text-sm font-semibold tracking-wider text-slate-300 uppercase">Ingeniería en Informática</h1>
+                <p class="text-xs text-slate-500">Técnicas de Desarrollo | Unidad 3: Calidad y Verificación de Software</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="text-xs bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded-full font-medium border border-emerald-500/20">Semana 8 Global</span>
+        </div>
+    </header>
+
+    <main class="flex-1 flex flex-col lg:flex-row min-h-0">
+        
+        <div class="flex-1 flex flex-col p-4 lg:p-8 justify-center items-center bg-slate-900 min-h-0 border-b lg:border-b-0 lg:border-r border-slate-800">
+            <div class="w-full max-w-5xl bg-slate-950 rounded-2xl border border-slate-800 shadow-2xl overflow-hidden flex flex-col slide-container relative">
+                
+                <div class="flex-1 p-8 lg:p-12 flex flex-col justify-center relative">
+                    
+                    <div id="slide-1" class="slide-content flex flex-col justify-between h-full">
+                        <div class="space-y-2">
+                            <span class="text-xs font-semibold tracking-widest text-emerald-400 uppercase">Unidad 3 · Semana 8</span>
+                            <div class="h-1 w-12 bg-emerald-500 rounded-full"></div>
+                        </div>
+                        <div class="my-auto space-y-4">
+                            <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                                Calidad y Pruebas:<br><span class="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Estrategias de Caja Negra</span>
+                            </h2>
+                            <p class="text-base text-slate-400 max-w-2xl font-light">
+                                Introducción a la ingeniería de control de calidad, taxonomía de fallas y técnicas profesionales de diseño de pruebas sobre la frontera.
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center pt-6 border-t border-slate-900/60 text-xs text-slate-500">
+                            <span>Ingeniería en Informática</span>
+                            <span>Módulo: Introducción al Testing</span>
+                        </div>
+                    </div>
+
+                    <div id="slide-2" class="slide-content hidden flex flex-col justify-between h-full">
+                        <div class="space-y-1">
+                            <span class="text-xs font-semibold tracking-widest text-emerald-400 uppercase">Conceptos de Calidad</span>
+                            <h3 class="text-2xl font-bold text-white">Error, Defecto y Falla</h3>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto text-xs font-light">
+                            <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl space-y-1">
+                                <span class="font-mono text-amber-400 font-bold text-sm block">🧠 1. Error</span>
+                                <p class="text-slate-400 leading-relaxed text-[11px]">Acción u omisión humana equivocada por parte del desarrollador al interpretar un requerimiento o escribir la sintaxis.</p>
+                            </div>
+                            <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl space-y-1">
+                                <span class="font-mono text-orange-400 font-bold text-sm block">🪲 2. Defecto (Bug)</span>
+                                <p class="text-slate-400 leading-relaxed text-[11px]">La imperfección física remanente en el código fuente (ej. usar un operador incorrecto) generada por el error.</p>
+                            </div>
+                            <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl space-y-1">
+                                <span class="font-mono text-rose-400 font-bold text-sm block">💥 3. Falla</span>
+                                <p class="text-slate-400 leading-relaxed text-[11px]">Evento observable en tiempo de ejecución donde el sistema se desvía del comportamiento esperado por el usuario.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center pt-4 border-t border-slate-900/60 text-xs text-slate-500">
+                            <span>Precisión Terminológica Profesional</span>
+                            <span>Slide 2 / 7</span>
+                        </div>
+                    </div>
+
+                    <div id="slide-3" class="slide-content hidden flex flex-col justify-between h-full">
+                        <div class="space-y-1">
+                            <span class="text-xs font-semibold tracking-widest text-emerald-400 uppercase">Estrategias de Validación</span>
+                            <h3 class="text-2xl font-bold text-white">¿Qué es probar en Caja Negra?</h3>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto text-xs font-light">
+                            <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl space-y-2">
+                                <h4 class="font-bold text-emerald-400 text-sm flex items-center gap-1"><span class="material-icons text-base">visibility_off</span> Opacidad del Sistema</h4>
+                                <p class="text-slate-300 leading-relaxed text-[11px]">
+                                    Se ignora por completo la estructura interna del algoritmo, los nombres de variables y la lógica en C. El sistema es tratado como un bloque cerrado.
+                                </p>
+                            </div>
+                            <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl space-y-2">
+                                <h4 class="font-bold text-cyan-400 text-sm flex items-center gap-1"><span class="material-icons text-base">gavel</span> Contrato de Requerimientos</h4>
+                                <p class="text-slate-300 leading-relaxed text-[11px]">
+                                    La validez se dictamina contrastando exclusivamente los estímulos inyectados (Inputs) contra las respuestas generadas (Outputs), basándose estrictamente en la documentación técnica.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center pt-4 border-t border-slate-900/60 text-xs text-slate-500">
+                            <span>Validación Basada en Requerimientos</span>
+                            <span>Slide 3 / 7</span>
+                        </div>
+                    </div>
+
+                    <div id="slide-4" class="slide-content hidden flex flex-col justify-between h-full">
+                        <div class="space-y-1">
+                            <span class="text-xs font-semibold tracking-widest text-emerald-400 uppercase">Optimización de Pruebas</span>
+                            <h3 class="text-2xl font-bold text-white">Particiones de Equivalencia</h3>
+                        </div>
+                        
+                        <div class="bg-slate-900 rounded-xl border border-slate-800 p-4 font-mono text-[11px] space-y-3 my-auto max-w-2xl mx-auto w-full">
+                            <p class="font-sans text-slate-400 text-[12px]">Técnica que divide el dominio de entrada de un programa en clases de datos de las cuales se pueden derivar casos de prueba.</p>
+                            <div class="grid grid-cols-3 gap-2 text-center font-bold">
+                                <div class="p-2 bg-rose-950/40 border border-rose-500/30 rounded text-rose-400">Clase Inválida<br><span class="text-[10px] font-normal text-slate-400">&lt; 100 RPM</span></div>
+                                <div class="p-2 bg-emerald-950/40 border border-emerald-500/30 rounded text-emerald-400">Clase Válida<br><span class="text-[10px] font-normal text-slate-400">100 a 5000 RPM</span></div>
+                                <div class="p-2 bg-rose-950/40 border border-rose-500/30 rounded text-rose-400">Clase Inválida<br><span class="text-[10px] font-normal text-slate-400">&gt; 5000 RPM</span></div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center pt-4 border-t border-slate-900/60 text-xs text-slate-500">
+                            <span>Eficiencia: Reduciendo el Espacio de Entrada</span>
+                            <span>Slide 4 / 7</span>
+                        </div>
+                    </div>
+
+                    <div id="slide-5" class="slide-content hidden flex flex-col justify-between h-full">
+                        <div class="space-y-1">
+                            <span class="text-xs font-semibold tracking-widest text-emerald-400 uppercase">Puntos Críticos</span>
+                            <h3 class="text-2xl font-bold text-white">Análisis de Valores Límite (BVA)</h3>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-auto text-xs font-light">
+                            <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl space-y-1">
+                                <span class="font-mono text-cyan-400 font-bold text-xs block">🎯 La Frontera del Defecto</span>
+                                <p class="text-slate-400 text-[11px] leading-relaxed">Estadísticamente, la mayor densidad de fallas lógicas se concentra en los extremos de las particiones (ej. usar un operador estrictamente menor en vez de menor o igual).</p>
+                            </div>
+                            <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl space-y-1">
+                                <span class="font-mono text-emerald-400 font-bold text-xs block">📋 Valores a Seleccionar</span>
+                                <p class="text-slate-400 text-[11px] leading-relaxed">Para una frontera técnica $L$, la suite formal de testing debe incluir obligatoriamente el valor límite exacto ($L$), un paso inmediatamente inferior ($L-1$) y un paso inmediatamente superior ($L+1$).</p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center pt-4 border-t border-slate-900/60 text-xs text-slate-500">
+                            <span>Maximizando la Probabilidad de Hallar Bugs</span>
+                            <span>Slide 5 / 7</span>
+                        </div>
+                    </div>
+
+                    <div id="slide-6" class="slide-content hidden flex flex-col justify-between h-full">
+                        <div class="space-y-1">
+                            <span class="text-xs font-semibold tracking-widest text-emerald-400 uppercase">Simulación Práctica</span>
+                            <h3 class="text-2xl font-bold text-white">Suite de Caja Negra: Control de RPM</h3>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 my-auto items-center">
+                            <div class="lg:col-span-7 bg-slate-900 p-4 rounded-xl border border-slate-800 font-mono text-[11px] space-y-2">
+                                <div class="text-[10px] text-slate-400 uppercase border-b border-slate-800 pb-1">⚙️ Inyección de Datos a: int procesar_rpm(int rpm);</div>
+                                <div class="flex gap-2 items-center">
+                                    <span class="text-slate-400">Ingresar RPM:</span>
+                                    <input type="number" id="input-rpm" value="5000" class="bg-slate-950 border border-slate-700 rounded px-2 py-0.5 text-emerald-400 font-bold w-24 focus:outline-none">
+                                </div>
+                                <div class="pt-2 text-[10px] text-slate-500">Especificación: [100 - 5000] -> Retorna 1 (Normal)</div>
+                            </div>
+                            
+                            <div class="lg:col-span-5 flex flex-col justify-center bg-slate-900/40 border border-slate-800 p-4 rounded-xl space-y-3">
+                                <button id="btn-run-test" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2 px-4 rounded-lg text-xs transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20">
+                                    <span class="material-icons text-base">play_arrow</span> Ejecutar Test Manual
+                                </button>
+                                <div id="test-output" class="text-center font-mono text-xs font-bold text-slate-400 bg-slate-950 p-2 rounded border border-slate-900">
+                                    Resultado Esperando Estímulo...
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center pt-4 border-t border-slate-900/60 text-xs text-slate-500">
+                            <span>Validación Dinámica en la Frontera</span>
+                            <span>Slide 6 / 7</span>
+                        </div>
+                    </div>
+
+                    <div id="slide-7" class="slide-content hidden flex flex-col justify-between h-full">
+                        <div class="space-y-1">
+                            <span class="text-xs font-semibold tracking-widest text-emerald-400 uppercase">Planificación</span>
+                            <h3 class="text-2xl font-bold text-white">Hacia el Testing Automatizado</h3>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto text-xs">
+                            <div class="space-y-2 text-slate-400 font-light leading-relaxed">
+                                <p>
+                                    La actividad de hoy asienta los fundamentos de la cobertura de código. Aprender a diseñar casos de prueba estructurados en papel y consola es el paso previo obligatorio.
+                                </p>
+                            </div>
+                            <div class="p-4 bg-emerald-950/20 border border-emerald-500/20 rounded-xl flex flex-col justify-center space-y-1">
+                                <span class="text-xs font-bold text-emerald-400 flex items-center gap-1">
+                                    <span class="material-icons text-sm">arrow_forward</span> Próxima semana:
+                                </span>
+                                <p class="text-[11px] text-slate-300 font-light leading-relaxed">
+                                    Semana 9: Pruebas de Caja Blanca e Introducción a Pruebas Unitarias. Abriremos la caja para evaluar la cobertura de caminos lógicos.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center pt-4 border-t border-slate-900/60 text-xs text-slate-500">
+                            <span>Ingeniería en Informática</span>
+                            <span>Slide 7 / 7</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="bg-slate-950 border-t border-slate-800 px-6 py-4 flex justify-between items-center text-xs shrink-0 select-none">
+                    <button id="prev-btn" class="flex items-center gap-1 hover:text-white transition-colors bg-slate-900 hover:bg-slate-800 border border-slate-800 px-3 py-1.5 rounded-lg font-medium text-slate-300">
+                        <span class="material-icons text-sm">chevron_left</span> Anterior
+                    </button>
+                    <div class="flex items-center gap-4">
+                        <div class="w-32 bg-slate-900 h-1.5 rounded-full overflow-hidden">
+                            <div id="progress-bar" class="bg-emerald-500 h-full w-0 transition-all duration-300"></div>
+                        </div>
+                        <span id="slide-num" class="font-mono text-slate-400">Slide 1 / 7</span>
+                    </div>
+                    <button id="next-btn" class="flex items-center gap-1 hover:text-white transition-colors bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-500/30 px-3 py-1.5 rounded-lg font-medium">
+                        Siguiente <span class="material-icons text-sm">chevron_right</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="w-full lg:w-96 bg-slate-950 flex flex-col h-auto lg:h-full overflow-y-auto border-t lg:border-t-0 border-slate-800 shrink-0">
+            <div class="p-6 border-b border-slate-800/80 bg-slate-950/40 flex justify-between items-center shrink-0">
+                <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                    <span class="material-icons text-indigo-400 text-sm">psychology</span>
+                    Notas del Orador / Guión Docente
+                </h3>
+            </div>
+            
+            <div class="p-6 space-y-4 flex-1">
+                <div class="bg-indigo-500/5 border border-indigo-500/20 rounded-xl p-4 space-y-1">
+                    <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">Objetivo de la Diapositiva</span>
+                    <p id="slide-meta" class="text-xs text-slate-300 leading-relaxed font-light">
+                        ...
+                    </p>
+                </div>
+                
+                <div class="space-y-2">
+                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Guión para la clase:</span>
+                    <div id="slide-script" class="text-xs text-slate-300 leading-relaxed space-y-2 font-medium bg-slate-900/30 p-4 rounded-xl border border-slate-900">
+                        <p>...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        const slides = [
+            {
+                id: 'slide-1',
+                meta: 'Iniciar la Unidad 3 enfocada en Calidad de Software. Romper la inercia del alumno de "solo programar" e inyectar el concepto de control y aseguramiento de calidad (QA/QC).',
+                script: `<p>"Buenas tardes a todos. Superado el parcial, entramos en la Unidad 3 de la materia: Calidad y Pruebas.</p>
+                         <p class='mt-2'>A partir de hoy cambia drásticamente nuestro objetivo en la computadora: ya no programamos para ver si el software anda; diseñamos estrategias rigurosas para intentar romperlo y encontrar sus límites."</p>`
+            },
+            {
+                id: 'slide-2',
+                meta: 'Explicar con precisión formal la secuencia causal estándar de la ingeniería de software: el error humano que inyecta un defecto latente y se manifiesta como falla en ejecución.',
+                script: `<p>"Grabémonos la diferencia técnica. Un error es la equivocación metodológica o mental del desarrollador en el código. Eso deja un defecto (el bug estático duro).</p>
+                         <p class='mt-2 text-slate-400'>Cuando el cliente final ejecuta el programa y el motor toca esa línea defectuosa, se produce la falla observable. Probamos software para liquidar los defectos antes de que generen fallas públicas."</p>`
+            },
+            {
+                id: 'slide-3',
+                meta: 'Definir conceptualmente la abstracción y el alcance de las Pruebas de Caja Negra, destacando su independencia respecto al algoritmo interno implementado.',
+                script: `<p>"Las pruebas de Caja Negra abordan el sistema de forma ciega y exterior. No nos importa si el archivo en C está estructurado de una u otra manera.</p>
+                         <p class='mt-2 text-emerald-400 font-semibold'>Nos enfocamos en el contrato:</p>
+                         <p class='text-slate-300'>Definimos estímulos controlados de entrada y auditamos que la salida responda exactamente a lo exigido en el pliego de especificaciones."</p>`
+            },
+            {
+                id: 'slide-4',
+                meta: 'Presentar la técnica formal de Partición de Equivalencia como una estrategia de optimización matemática del espacio de estados de entrada.',
+                script: `<p>"No podemos probar infinitos enteros en la terminal, sería absurdo. Por eso aplicamos particiones de equivalencia.</p>
+                         <p class='mt-2 text-slate-400'>Dividimos el universo en grupos homogéneos. Alcanza con tomar un único representante de la zona válida y uno de cada zona inválida para predecir con alta confianza el comportamiento general del software."</p>`
+            },
+            {
+                id: 'slide-5',
+                meta: 'Introducir el Análisis de Valores Límite, argumentando desde la experiencia práctica por qué las fronteras de los rangos concentran los fallos del programador.',
+                script: `<p>"Si la partición nos da los rangos, el Análisis de Valores Límite nos da el punto exacto del ataque. Los seres humanos nos equivocamos por naturaleza en los extremos lógicos: confundimos un menor con un menor o igual.</p>
+                         <p class='mt-2'>Por ende, nuestra suite de prueba obligatoriamente debe pararse sobre el límite exacto, un paso antes y un paso después."</p>`
+            },
+            {
+                id: 'slide-6',
+                meta: 'Guiar la interacción en el laboratorio usando el simulador dinámico para demostrar cómo un caso de prueba expone las respuestas del código según las pautas de frontera.',
+                script: `<p>"Miren el simulador de control de RPM de la diapositiva. La especificación técnica nos dice que entre 100 y 5000 RPM el estado es normal. Probemos el límite superior: si ponemos 5000 debe dar normal. Pero si ponemos 5001, la frontera se quiebra y el sistema debe disparar la alerta de sobrecarga."</p>`
+            },
+            {
+                id: 'slide-7',
+                meta: 'Cerrar la sesión de la fecha delimitando los entregables de la guía práctica y adelantando el salto conceptual hacia Caja Blanca para la Semana 9.',
+                script: `<p>"Hoy completarán una suite formal de casos de prueba manuales de caja negra en base a una pauta industrial oculta que les voy a proveer.</p>
+                         <p class='mt-2 text-emerald-400 font-medium'>Practiquen la precisión documental:</p>
+                         <p class='text-slate-300'>La semana que viene abriremos el archivo fuente de C para analizar caminos internos mediante estrategias de Caja Blanca."</p>`
+            }
+        ];
+
+        let currentSlide = 0;
+
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const progressBar = document.getElementById('progress-bar');
+        const slideNumText = document.getElementById('slide-num');
+        const slideMeta = document.getElementById('slide-meta');
+        const slideScript = document.getElementById('slide-script');
+        
+        function updateSlides() {
+            slides.forEach((slide, idx) => {
+                const el = document.getElementById(slide.id);
+                if (el) {
+                    if (idx === currentSlide) el.classList.remove('hidden');
+                    else el.classList.add('hidden');
+                }
+            });
+
+            slideMeta.textContent = slides[currentSlide].meta;
+            slideScript.innerHTML = slides[currentSlide].script;
+
+            prevBtn.disabled = currentSlide === 0;
+            prevBtn.style.opacity = currentSlide === 0 ? '0.4' : '1';
+            
+            if (currentSlide === slides.length - 1) {
+                nextBtn.innerHTML = `Inicio <span class="material-icons text-sm">restart_alt</span>`;
+            } else {
+                nextBtn.innerHTML = `Siguiente <span class="material-icons text-sm">chevron_right</span>`;
+            }
+
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            slideNumText.textContent = `Slide ${currentSlide + 1} / ${slides.length}`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) { currentSlide--; updateSlides(); }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) { currentSlide++; updateSlides(); }
+            else { currentSlide = 0; updateSlides(); }
+        });
+
+        // Lógica Interactiva del Simulador de Pruebas de RPM
+        const btnRunTest = document.getElementById('btn-run-test');
+        const inputRpm = document.getElementById('input-rpm');
+        const testOutput = document.getElementById('test-output');
+
+        btnRunTest.addEventListener('click', () => {
+            const val = parseInt(inputRpm.value);
+            
+            if (isNaN(val)) {
+                testOutput.className = "text-center font-mono text-xs font-bold bg-slate-950 p-2 rounded border border-amber-500 text-amber-500";
+                testOutput.textContent = "RESULTADO: Entrada Inválida (No es número)";
+                return;
+            }
+
+            // Simulación de una implementación que tiene un DEFECTO en el límite exacto de 5000 (usa > en vez de >=)
+            if (val >= 100 && val < 5000) {
+                testOutput.className = "text-center font-mono text-xs font-bold bg-slate-950 p-2 rounded border border-emerald-500 text-emerald-400";
+                testOutput.textContent = `OUTPUT: 1 (Normal) -> [PASS]`;
+            } else if (val === 5000) {
+                testOutput.className = "text-center font-mono text-xs font-bold bg-slate-950 p-2 rounded border border-rose-500 text-rose-400 animate-pulse";
+                testOutput.textContent = `OUTPUT: -1 (Sobrecarga) -> [FAIL! Esperado: 1]`;
+            } else if (val > 5000) {
+                testOutput.className = "text-center font-mono text-xs font-bold bg-slate-950 p-2 rounded border border-emerald-500 text-emerald-400";
+                testOutput.textContent = `OUTPUT: -1 (Sobrecarga) -> [PASS]`;
+            } else {
+                testOutput.className = "text-center font-mono text-xs font-bold bg-slate-950 p-2 rounded border border-emerald-500 text-emerald-400";
+                testOutput.textContent = `OUTPUT: 0 (Baja Vel.) -> [PASS]`;
+            }
+        });
+
+        updateSlides();
+    </script>
+</body>
+</html>
+"""
+
+with open("tecnicas_desarrollo_u3_s8.html", "w", encoding="utf-8") as f:
+    f.write(html_content_u2_w8)
